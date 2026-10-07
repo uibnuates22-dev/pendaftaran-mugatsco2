@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Pendaftaran peserta MUGATSCO 2 Tahun 2026">
+  <title>Pendaftaran MUGATSCO 2 2026</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <div class="hero-logo-wrap">
+        <img class="hero-logo" src="logo-mugatsco.png" alt="Logo MUGATSCO">
+      </div>
+      <h1>Pendaftaran Peserta<br><span>Lomba MUGATSCO 2</span></h1>
+      <p class="hero-text">Scroll ke bawah untuk mengisi formulir pendaftaran dengan benar.</p>
+      <div class="period">10 September – 22 Oktober 2026</div>
+    </section>
+
+    <section class="important-info">
+      <div class="info-card juknis-card">
+        <div class="info-icon">📘</div>
+        <div class="info-content">
+          <div class="info-label">PANDUAN LOMBA</div>
+          <h2>Juknis MUGATSCO 2</h2>
+          <p>Silakan baca petunjuk teknis terlebih dahulu agar persyaratan dan ketentuan setiap cabang lomba dapat dipahami dengan baik.</p>
+          <a class="info-button" href="https://bit.ly/JuknisMugatsco2" target="_blank" rel="noopener noreferrer">
+            Buka / Download Juknis <span>↗</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="info-card payment-card">
+        <div class="info-icon">💳</div>
+        <div class="info-content">
+          <div class="info-label">PEMBAYARAN PENDAFTARAN</div>
+          <h2>Biaya Pendaftaran</h2>
+          <p>Setelah mengisi formulir, silakan lakukan pembayaran biaya pendaftaran ke rekening berikut:</p>
+          <div class="bank-box">
+            <div><span>Bank</span><strong>BNI</strong></div>
+            <div><span>No. Rekening</span><strong>2056628753</strong></div>
+            <div><span>Atas Nama</span><strong>Neni Anggelina Respati Wulan</strong></div>
+          </div>
+          <div class="confirmation">
+            <strong>Wajib konfirmasi pembayaran</strong>
+            <span>WhatsApp Mrs. Neni: <a href="https://wa.me/6285709509261" target="_blank" rel="noopener noreferrer">0857 0950 9261</a></span>
+          </div>
+          <p class="payment-note">Mohon simpan bukti transfer dan kirimkan bukti pembayaran saat melakukan konfirmasi melalui WhatsApp.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div id="statusBanner" class="status-banner" aria-live="polite"></div>
+
+      <form id="registrationForm" novalidate>
+        <div class="section-title">
+          <span>01</span>
+          <div>
+            <h2>Data Pendaftaran</h2>
+            <p>Pilih jenis lomba terlebih dahulu.</p>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="competition">Cabang Lomba <b>*</b></label>
+          <select id="competition" required>
+            <option value="">-- Pilih cabang lomba --</option>
+          </select>
+        </div>
+
+        <div id="individualFields" class="form-section hidden">
+          <div class="section-title small">
+            <span>02</span>
+            <div>
+              <h2>Data Peserta</h2>
+              <p>Satu peserta boleh mengikuti beberapa cabang berbeda.</p>
+            </div>
+          </div>
+
+          <div class="grid">
+            <div class="field full">
+              <label for="participantName">Nama Peserta <b>*</b></label>
+              <input id="participantName" type="text" maxlength="100" autocomplete="name"
+                     placeholder="Masukkan nama lengkap peserta">
+            </div>
+
+            <div class="field">
+              <label for="school">Asal Sekolah <b>*</b></label>
+              <input id="school" type="text" maxlength="150" autocomplete="organization"
+                     placeholder="Nama sekolah">
+            </div>
+
+            <div class="field">
+              <label for="phone">No. HP <b>*</b></label>
+              <input id="phone" type="tel" maxlength="20" autocomplete="tel"
+                     placeholder="08xxxxxxxxxx">
+            </div>
+          </div>
+        </div>
+
+        <div id="teamFields" class="form-section hidden">
+          <div class="section-title small">
+            <span>02</span>
+            <div>
+              <h2>Data Tim Minisoccer</h2>
+              <p>Masukkan nama tim, sekolah, kontak, dan anggota tim.</p>
+            </div>
+          </div>
+
+          <div class="grid">
+            <div class="field full">
+              <label for="teamName">Nama Tim <b>*</b></label>
+              <input id="teamName" type="text" maxlength="100" placeholder="Nama tim">
+            </div>
+
+            <div class="field">
+              <label for="teamSchool">Asal Sekolah <b>*</b></label>
+              <input id="teamSchool" type="text" maxlength="150" placeholder="Nama sekolah">
+            </div>
+
+            <div class="field">
+              <label for="teamPhone">No. HP <b>*</b></label>
+              <input id="teamPhone" type="tel" maxlength="20" placeholder="08xxxxxxxxxx">
+            </div>
+          </div>
+
+          <div class="members-header">
+            <div>
+              <h3>Anggota Tim</h3>
+              <p>Tambahkan seluruh anggota tim sesuai ketentuan lomba.</p>
+            </div>
+            <button type="button" id="addMemberBtn" class="btn secondary small-btn">+ Tambah anggota</button>
+          </div>
+          <div id="membersList" class="members-list"></div>
+          <p class="hint">Jumlah anggota awal: 5. Batas dapat diubah di <code>script.js</code> sesuai juknis.</p>
+        </div>
+
+        <button id="submitBtn" class="btn primary submit-btn" type="submit">
+          <span id="submitText">Daftar Sekarang</span>
+          <span id="spinner" class="spinner hidden"></span>
+        </button>
+
+        <p class="privacy-note">Data pendaftaran dikirim dan disimpan pada sistem pendaftaran MUGATSCO 2.</p>
+      </form>
+
+      <div id="successBox" class="success-box hidden" aria-live="polite">
+        <div class="success-icon">✓</div>
+        <h2>Pendaftaran Berhasil!</h2>
+        <p id="successMessage"></p>
+        <button id="newRegistrationBtn" class="btn primary">Daftar Peserta Lain</button>
+      </div>
+    </section>
+
+    <footer>
+      <p>MUGATSCO 2 • 2026</p>
+    </footer>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="script.js"></script>
+</body>
+</html>
