@@ -15,8 +15,8 @@ const OPEN_DATE = new Date("2026-09-10T00:00:00+07:00");
 const CLOSE_DATE = new Date("2026-10-22T23:59:59+07:00");
 
 // Default anggota Minisoccer. Sesuaikan jika juknis resmi berbeda.
-const MIN_TEAM_MEMBERS = 5;
-const MAX_TEAM_MEMBERS = 12;
+const MIN_TEAM_MEMBERS = 7;
+const MAX_TEAM_MEMBERS = 14;
 
 const form = document.getElementById("registrationForm");
 const competition = document.getElementById("competition");
